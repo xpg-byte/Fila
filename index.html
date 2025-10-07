@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fila de Atendimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: hsl(210, 36%, 96%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      color: #003366;
+    }
+    label {
+      margin-top: 10px;
+      display: block;
+      font-weight: bold;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0055aa;
+    }
+  </style>
+</head>
+<body>
+    <form action="https://script.google.com/macros/s/AKfycbwF_NJTd-XkTs_v4eZQaroC35bSmKvcQAoquAS5l88teFr2S37VBmPGmqCKV6FZ_TtJ/exec" method="POST">
+        <label>Nome completo:</label>
+        <input type="text" name="nome" required><br>
+      
+        <label>CPF:</label>
+        <input type="text" name="cpf" required><br>
+      
+        <label>Telefone:</label>
+        <input type="text" name="telefone" required><br>
+      
+        <label>Motivo da visita:</label>
+        <input type="text" name="motivo" required><br>
+      
+        <label>Serviço desejado:</label>
+        <select name="servico" required>
+          <option value="Atendimento Geral">Atendimento Geral</option>
+          <option value="Financeiro">Financeiro</option>
+          <option value="Documentação">Documentação</option>
+        </select><br>
+      
+        <input type="hidden" name="horario" id="horario">
+        <button type="submit">Enviar</button>
+      
+        <script>
+          document.getElementById("horario").value = new Date().toLocaleString();
+        </script>
+      </form>
+      
+</body>
+</html>
